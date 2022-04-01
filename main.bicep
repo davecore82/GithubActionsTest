@@ -32,7 +32,7 @@ resource stg 'Microsoft.Storage/storageAccounts@2021-04-01' = {
 
 output storageEndpoint object = stg.properties.primaryEndpoints
 
-# adding vnet
+// adding vnet
 
 resource virtualNetwork 'Microsoft.Network/virtualNetworks@2019-11-01' = {
   name: 'vnet-testiac'
@@ -45,13 +45,13 @@ resource virtualNetwork 'Microsoft.Network/virtualNetworks@2019-11-01' = {
     }
     subnets: [
       {
-        name: subnet1Name
+        name: 'mysubnet1'
         properties: {
           addressPrefix: '10.0.0.0/24'
         }
       }
       {
-        name: subnet2Name
+        name: 'mysubnet2'
         properties: {
           addressPrefix: '10.0.1.0/24'
         }
